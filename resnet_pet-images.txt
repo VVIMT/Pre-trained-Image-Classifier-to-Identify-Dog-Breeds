@@ -1,0 +1,4 @@
+Command Line Arguments:
+     dir = ['pet_images/'] 
+    arch = ['resnet'] 
+ dogfile = ['dognames.txt']

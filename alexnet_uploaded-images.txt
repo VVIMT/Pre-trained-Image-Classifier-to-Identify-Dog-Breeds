@@ -1,0 +1,77 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = alexnet 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 4 key-value pairs.
+Below are 4 of them:
+ 1 key:           Border_Collie_01.jpg  label:              border collie
+ 2 key:                       Cake.jpg  label:                           
+ 3 key:           Border_Collie_02.jpg  label:              border collie
+ 4 key:                     Coyote.jpg  label:                           
+
+     MATCH:
+
+          Border_Collie_02.jpg: 
+Real:              border collie   Classifier:                  border collie
+
+ NOT A MATCH:
+
+          Border_Collie_01.jpg: 
+Real:              border collie   Classifier:    boston bull, boston terrier
+
+                      Cake.jpg: 
+Real:                              Classifier: plane, carpenter's plane, woodworking plane
+
+                    Coyote.jpg: 
+Real:                              Classifier: coyote, prairie wolf, brush wolf, canis latrans
+
+# Total Images 4 # Matches: 1 # NOT Matches: 3
+
+     MATCH:
+
+          Border_Collie_02.jpg: 
+Real:              border collie   Classifier:                  border collie  
+PetLabelDog: 1  ClassLabelDog: 1
+
+ NOT A MATCH:
+
+          Border_Collie_01.jpg: 
+Real:              border collie   Classifier:    boston bull, boston terrier  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                      Cake.jpg: 
+Real:                              Classifier: plane, carpenter's plane, woodworking plane  
+PetLabelDog: 0  ClassLabelDog: 0
+
+                    Coyote.jpg: 
+Real:                              Classifier: coyote, prairie wolf, brush wolf, canis latrans  
+PetLabelDog: 0  ClassLabelDog: 0
+
+# Total Images 4 # Matches: 1 # NOT Matches: 3
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog:   1.0 Pct Corr NOTdog:   1.0  Pct Corr Breed:   0.5
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:  50.0
+
+Model: alexnet
+
+Number of Images: 4
+Number of Dog Images: 2
+Number of "Not-a" Dog Images: 2
+% Correct Dogs: 1.0
+% Correct Breed: 0.5
+% Correct "Not-a" Dog: 1.0
+% Match: 0.25
+
+Misclassified Breed's of Dog
+ Pet Image: border collie
+ Pet Classifier: boston bull, boston terrier
+----------
+Number of Incorrect Breeds: 1
+
+** Total Elapsed Runtime: 0:0:0
