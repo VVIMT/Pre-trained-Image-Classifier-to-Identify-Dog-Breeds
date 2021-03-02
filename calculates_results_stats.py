@@ -68,8 +68,8 @@ def calculates_results_stats(results_dic):
                      and the previous topic Calculating Results in the class for details
                      on how to calculate the counts and statistics.
     """        
-    # Replace None with the results_stats_dic dictionary that you created with 
-    # this function 
+    # Replace None with the results_stats_dic dictionary that you created with
+    # this function
     results_stats_dic = {
                             'n_images': 0,
                             'n_dogs_img': 0,
@@ -105,15 +105,16 @@ def calculates_results_stats(results_dic):
     n_correct_dogs = results_stats_dic['n_correct_dogs']
     n_correct_notdogs = results_stats_dic['n_correct_notdogs']
     n_correct_breed = results_stats_dic['n_correct_breed']
-    
-    try:
-        results_stats_dic['pct_match'] = n_match / n_images * 100
-        results_stats_dic['pct_correct_dogs'] = n_correct_dogs / n_dogs_img * 100
-        results_stats_dic['pct_correct_breed'] = n_correct_breed / n_dogs_img * 100
-    except ZeroDivisionError:
-        pass
 
+    if n_images > 0:
+        results_stats_dic['pct_match'] = n_match / n_images * 100
+    if n_dogs_img > 0:
+        results_stats_dic['pct_correct_dogs'] = \
+            n_correct_dogs / n_dogs_img * 100
+        results_stats_dic['pct_correct_breed'] = \
+            n_correct_breed / n_dogs_img * 100
     if n_notdogs_img > 0:
-        results_stats_dic['pct_correct_notdogs'] = n_correct_notdogs / n_notdogs_img * 100
+        results_stats_dic['pct_correct_notdogs'] = \
+            n_correct_notdogs / n_notdogs_img * 100
 
     return results_stats_dic
