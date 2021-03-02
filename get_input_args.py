@@ -42,9 +42,9 @@ def get_input_args():
     Parse = argparse.ArgumentParser(prog="check_images.py", description="Process Image Folder, \
     CNN Model Architecture and Text File with Dog Names.")
     # Create 3 command line arguments as mentioned above using add_argument() from ArguementParser method
-    Parse.add_argument('--dir', type = str, default='pet_images/')
-    Parse.add_argument('--arch', type = str, default='vgg')
-    Parse.add_argument('--dogfile', type = str, default='dognames.txt')
+    Parse.add_argument('--dir', type = str, default='pet_images/', help='Path to the folder of pet images')
+    Parse.add_argument('--arch', type = str, default='vgg', help='Architecture for the CNN model')
+    Parse.add_argument('--dogfile', type = str, default='dognames.txt', help='Text file containing the dog names')
 
     # Replace None with parser.parse_args() parsed argument collection that 
     # you created with this function 

@@ -45,13 +45,16 @@ def get_pet_labels(image_dir):
     label = []
 
     for name in filename_list:
+        if name.startswith('.'):
+            continue
         key = name
         name = name.lower().split("_")
-        for i, word in enumerate(name):
+        tmp_name = []
+        for word in name:
             word = word.strip()
-            if not word.isalpha():
-                name.pop(i)
-        label = [' '.join(name)]
+            if word.isalpha():
+                tmp_name.append(word)
+        label = [' '.join(tmp_name)]
         results_dic[key] = results_dic.get(key, label)
     # Replace None with the results_dic dictionary that you created with this
     # function
